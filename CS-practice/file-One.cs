@@ -1,9 +1,12 @@
 using System;
-class Lesson
+
+internal class NewBaseType
 {
-    static void main()
+    static void Main()
     {
         int x = 90;
+        Console.WriteLine("Here simple number");
         Console.WriteLine(x);
     }
 }
+
