@@ -1,12 +1,8 @@
 using System;
-
-internal class NewBaseType
+internal class Lesson
 {
     static void Main()
     {
-        int x = 90;
-        Console.WriteLine("Here simple number");
-        Console.WriteLine(x);
+        Console.WriteLine("hello world");
     }
 }
-
