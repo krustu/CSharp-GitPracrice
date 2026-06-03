@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-class Program
+class Practice1
 {
     static void Main()
     {
