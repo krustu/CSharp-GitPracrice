@@ -37,7 +37,10 @@ Console.ReadKey();
 
 class Vehicle
 {
-    public string Name {get ; set;}
+
+    public string? Name {get ; set;}
+
+    
    
     public int MaxSpeed
     {
