@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+namespace ZooPractice;
 class Zoo
 {
     List<Animal> allanimals = new List<Animal>();  // add static to fix or inherit from zoo and make it non static
