@@ -1,11 +1,13 @@
 ﻿using System;
-using System.IO.Pipes;
 
 class RPG
 {
     public static List<Character> npc = new List<Character>();
-    static void Main()
+    public static void Main()
     {
+        List<ILootable> lootables = new();
+
+        
         // more browlers
         Goblins g1 = new Goblins
         {
@@ -16,6 +18,7 @@ class RPG
         };
 
         npc.Add(g1);
+        lootables.Add(g1);
 
         Goblins g2 = new Goblins
         {
@@ -25,7 +28,13 @@ class RPG
             Level = 1
         };
         npc.Add(g2);
+        lootables.Add(g2);
+        
 
+        foreach (var item in lootables)
+        {
+            Console.WriteLine(item.GetLoot());
+        }
 
 
         // fight 
@@ -37,8 +46,16 @@ class RPG
     }
     
 }
-class Character
+interface ILootable
 {
+    string GetLoot(); //////////////////////////////////////////////////////////
+}
+ class Character
+{
+     public Character()
+    {
+        RPG.npc.Add(this);
+    }
     public string ?Name{get ; set; }
     public int HP{get; set;}
     public int Damage{get; set;}
@@ -66,8 +83,12 @@ class Character
 
 
 
-class Goblins : Character
+class Goblins : Character , ILootable
 {
+    public string GetLoot()
+    {
+        return "Goblin dildo"; //////////////////////////////////////////
+    }
     //chance to hide attack 
     class Boss : Goblins
     {
@@ -89,8 +110,14 @@ class Humans : Character
     // another skills
 
 }
-class Ogrs : Character
+class Ogrs : Character , ILootable
 {
+    public string GetLoot()
+    {
+        return "Ogr Fang";
+    }
+   
+    
     //extra hp
     //weakness from some peaples
 }
